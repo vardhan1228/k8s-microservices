@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mobiles-deployment
+  labels:
+    app: mobiles
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mobiles
+  template:
+    metadata:
+      labels:
+        app: mobiles
+    spec:
+      containers:
+      - name: mobiles
+        image: 905418310012.dkr.ecr.us-east-1.amazonaws.com/shopping-site-mobiles:b3ec627810cc129b4eca0d1cc99537f8b4767dd1
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mobiles-service
+  labels:
+    app: mobiles
+spec:
+  type: ClusterIP
+  selector:
+    app: mobiles
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
