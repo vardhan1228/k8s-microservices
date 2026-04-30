@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: furniture
-        image: 905418310012.dkr.ecr.us-east-1.amazonaws.com/shopping-site-furniture:b3ec627810cc129b4eca0d1cc99537f8b4767dd1
+        image: 413117505476.dkr.ecr.us-east-1.amazonaws.com/shopping-site-furniture:daf50583894e25e8de24a525db469a065e714219
         ports:
         - containerPort: 80
 ---
